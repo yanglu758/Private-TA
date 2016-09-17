@@ -1,0 +1,150 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>Search</h2>
+				<p>Find your ideal tutor.</p>
+			</header>
+			<h4>Pointers to take note</h4>
+			<ul>
+				<li>Please input at least one search criteria. You can fill in all search critera.</li>
+				<li>For search criteria by name and module code, the entry must be exact and preferably capitalised.</li>
+				<li>At most 10 search results are displayed.</li>
+			</ul>
+			<form action="/search" method="post">
+				<div class="row uniform 50%">
+					<div class="12u$">
+						<h3>Personal Particulars</h3>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Name</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<input type="text" name="name" placeholder="Name"/>
+					
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Gender</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<select name="gender" size="1" id="gender">
+							<option>Any</option>
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Current Programme</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<select name="current_programme" size="1" id="current_programme">
+							<option>Any</option>
+							<option>Undergraduate</option>
+							<option>Graduate</option>
+							<option>PhD</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Current Year</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<select name="year" size="1">
+							<option>Any</option>
+							<option>Year 1</option>
+							<option>Year 2</option>
+							<option>Year 3</option>
+							<option>Year 4</option>
+							<option>Year 5 and above</option>
+						</select>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Faculty</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<select name="tutor_faculty" size="1">
+							<option>Any</option>
+							<option>Faculty of Dentistry</option>
+							<option>School of Medicine</option>
+							<option>Faculty of Science</option>
+							<option>School of Music</option>
+							<option>Faculty of Engineering</option>
+							<option>School of Design and Environment</option>
+							<option>Faculty of Arts and Social Sciences</option>
+							<option>School of Computing</option>
+							<option>School of Business</option>
+							<option>Faculty of Law</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Course</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<select name="tutor_course" size="1">
+							<option>Any</option>
+							<option>Law</option>
+							<option>Medicine</option>
+							<option>Nursing</option>
+							<option>Dentistry</option>
+							<option>Architecture</option>
+							<option>Industrial Design</option>
+							<option>Project and Facilities Management</option>
+							<option>Real Estate</option>
+							<option>Common Engineering</option>
+							<option>Biomedical Engineering</option>
+							<option>Chemical Engineering</option>
+							<option>Civil Engineering</option>
+							<option>Electrical Engineering</option>
+							<option>Environmental Engineering</option>
+							<option>Engineering Science</option>
+							<option>Industrial and Systems Engineering</option>
+							<option>Material Science and Engineering</option>
+							<option>Mechanical Engineering</option>
+							<option>Mechanical Engineering (Aeronautical)</option>
+							<option>Business Analytics</option>
+							<option>Computer Science</option>
+							<option>Information Systems</option>
+							<option>Computer Engineering</option>
+							<option>Pharmacy</option>
+							<option>Science</option>
+							<option>Business Adminstration</option>
+							<option>Business Adminstration(Accountancy)</option>
+							<option>Arts and Social Sciences</option>
+							<option>Environmental Studies</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="6u 12u$(small)">
+						<p>Module Code</p>
+					</div>
+					<div class="6u 12u$(small)">
+						<input type="text" name="module" placeholder="Module Code"/>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="submit"></li>
+						<li><input type="reset" value="reset"></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</section>
+					
+{% endblock %}

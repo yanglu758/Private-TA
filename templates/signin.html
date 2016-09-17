@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/">Private TA</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="about_us.html">About Us</a></li>
+						<li><a href="{{ post_url }}">Post</a></li>
+						<li><a href="browse.html">Browse</a></li>
+						<li><a href="search.html">Search</a></li>
+						<li><a href="contact_us.html">Contact</a></li>
+						<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Sign In Required</h2>
+						<p>Sorry, you have not signed in to access to this facility. </p>		
+					</header>
+                    <p>Please click the link in the navigation bar to be directed to the sign in page.</p>
+					<a href="#" class="image fit"><img src="images/pic08.jpg" alt="" /></a>
+					
+				</div>
+			</section>
+
+		
+	</body>
+{% endblock %}

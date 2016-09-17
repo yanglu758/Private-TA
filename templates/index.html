@@ -1,0 +1,161 @@
+<!DOCTYPE: html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ title }}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="../stylesheets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="//platform.twitter.com/widgets.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="../stylesheets/css/skel.css" />
+			<link rel="stylesheet" href="../stylesheets/css/style.css" />
+			<link rel="stylesheet" href="../stylesheets/css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="../stylesheets/css/ie/v8.css" /><![endif]-->
+	</head>
+	{% block content %}
+	
+	<body class="landing">
+				<header id="header">
+					<h1><a href="/">Private TA</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="about_us.html">About Us</a></li>
+							<li><a href="{{ post_url }}">Post</a></li>
+							<li><a href="browse.html">Browse</a></li>
+							<li><a href="search.html">Search</a></li>
+							<li><a href="contact_us.html">Contact</a></li>
+							<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+						</ul>
+					</nav>
+				</header>
+				<section id="banner">
+					<h2>Welcome to Private TA</h2>
+					<p>Your personal teaching assistant.</p>
+					<ul class="actions">
+						<li>
+							<a href="{{ post_url }}" class="button big">Start Teaching</a>
+							<a href="browse.html" class="button big">Start Learning</a>
+						</li>
+					</ul>
+				</section>
+			
+				<section id="one" class="wrapper style1 align-center">
+					<div class="container">
+						<header>
+							<h2>Quick Start</h2>
+							<p>Here are some basic features of our website.</p>
+						</header>
+						<div class="row 200%">
+							<section class="4u 12u$(small)">
+								<i class="icon big rounded fa-clock-o"></i>
+									<p>Search</br> Tutees can search for their ideal tutors based on their specific preferences. </p>
+							</section>
+							<section class="4u 12u$(small)">
+								<i class="icon big rounded fa-comments"></i>
+								<p>Post</br>Tutors can register their particulars and the modules they want to teach.</p>
+							</section>
+							<section class="4u$ 12u$(small)">
+								<i class="icon big rounded fa-user"></i>
+								<p>Browse</br>Tutees can view all tutors' information at one glance.</p>
+							</section>
+						</div>
+					</div>
+				</section>
+					
+
+				<section id="two" class="wrapper style2 align-center">
+					<div class="container">
+						<header>
+							<h2>Why Choose Us?</h2>
+							<p>Here are some benefits you will get.</p>
+						</header>
+						<div class="row">
+						<section class="feature 6u 12u$(small)">
+							<img class="image fit" src="images/pic01.jpg" alt="" />
+							<h3 class="title">Tutor: Part-Time Tuition Career</h3>
+							<p>Short of pocket money? Trouble getting a decent and well-paid part-time job? Tired of finding your students as a part-time tutor? Here is a great opportunity for you! Simply make your post on our platform and you will be contacted by interested students in no time!</p>
+						</section>
+						<section class="feature 6u$ 12u$(small)">
+							<img class="image fit" src="images/pic02.jpg" alt="" />
+							<h3 class="title">Tutor: Strengthening Concepts</h3>
+							<p>Confucius said:"One is worthy of being or becoming a teacher if one is able to derive new understanding while revising old." Right! Teaching as a tutor is not only helping others, but also yourself. Revising your past concepts will help you strengthen your understanding and gain new insights.</p>
+						</section>
+						<section class="feature 6u 12u$(small)">
+							<img class="image fit" src="images/pic03.jpg" alt="" />
+							<h3 class="title">Tutee: Instant Enlightenment</h3>
+							<p>Having troubles understanding the challenging concepts? Shy of turning to your TA or lecturer for help? Need immediate one-to-one help session? No worries, help is on the way! We offer many choices of competent tutors for you! Simply search for your most ideal tutor and contact him! Price is negotiable!</p>
+						</section>
+						<section class="feature 6u$ 12u$(small)">
+							<img class="image fit" src="images/pic04.jpg" alt="" />
+							<h3 class="title">Tutee: CAP Booster Richard was here :)</h3>
+							<p>Want to challenge the bell-curve god and be the new face on the Dean's List? Not a unrealistic dream! Consistent help from your tutor definitely will enhance your understanding and improve your grades! Gone are the painful days of getting stuck at one problem for hours and feeling desperate and helpless! </p>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			{% endblock %}
+						
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="4u 6u(medium) 12u$(small)">
+							<h3>Collaboration</h3>
+							<p>Here are some useful sites related to our project.</p>
+							<ul class="alt">
+								<li><a href="http://nus.edu.sg">National University of Singapore</a></li>
+								<li><a href="https://www.comp.nus.edu.sg">NUS School of Computing</a></li>
+								<li><a href="http://orbital.comp.nus.edu.sg">NUS Orbital Project</a></li>
+								<li><a href="http://nusskylab-mht7cvdwt2.elasticbeanstalk.com">NUS SkyLab</a></li>
+							</ul>
+						</section>
+						<section class="4u$ 12u$(medium) 12u$(small)">
+							<h3>Contact Us</h3>
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+							<ul class="icons">
+								<li><a href="https://twitter.com/share" data-url="http://private-ta.appspot.com" data-text="Come be a tutor to help others or a tutee to seek help on NUS's biggest online help community!" class="icon rounded fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><div class="fb-share-button" data-href="http://private-ta.appspot.com" data-layout="button"></div></li>
+							</ul>
+							<ul class="tabular">
+								<li>
+									<h3>Address</h3>
+									13 Computing Dr
+									Singapore 117417
+								</li>
+								<li>
+									<h3>Mail</h3>
+									Lu Yang: a0130684@u.nus.edu
+									Yulong: a0127603@u.nus.edu
+								</li>
+								<li>
+									<h3>Phone</h3>
+									Lu Yang: +65 91513796</br>
+									Yulong: + 65 82518728
+								</li>
+							</ul>
+						</section>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Dragon and Sheep. All rights reserved.</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+					</ul>
+				</div>
+			</footer>
+		</body>
+	</html>

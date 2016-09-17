@@ -1,0 +1,53 @@
+{% extends "index.html" %}
+{% block content %}
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/">Private TA</a></h1>
+				<nav id="nav">
+						<ul>
+							<li><a href="about_us.html">About Us</a></li>
+							<li><a href="{{ post_url }}">Post</a></li>
+							<li><a href="browse.html">Browse</a></li>
+							<li><a href="search.html">Search</a></li>
+							<li><a href="contact_us.html">Contact</a></li>
+							<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+						</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<header class="major">
+						<h2>Contact Us</h2>
+						<p>Please feel free to drop any query or feedback. </p>
+					</header>
+					<h3>Lu Yang</h3>
+					<p>
+						<span class="image right"><img src="images/10896977_10200136765137740_282150642964447421_n.jpg" width="180px" height="180px"></span>
+						<ul>
+							<li>Course: Computer Science, NUS.</li>
+							<li>Academic Year: 2014/15</li>
+							<li>Email: <a href="mailto:a0130684@u.nus.edu">a0130684@u.nus.edu</a></li>
+							<li>Contact Number: +6591513796</li>
+							<li>Twitter: yang07ly</li>
+						</ul>
+					</p>
+					<hr />
+					<p></p>
+					<h3>Wang Yulong</h3>
+					<p>
+						<span class="image right"><img src="images/1782294_837398012941064_43099058_o.jpg" width="180px" height="180px"></span>
+						<ul>
+							<li>Course: Computer Engineering, NUS.</li>
+							<li>Academic Year: 2014/15</li>
+							<li>Email: <a href="mailto:a0127603@u.nus.edu">a0127603@u.nus.edu</a></li>
+							<li>Contact Number: +6582518728</li>
+							<li>Facebook: https://www.facebook.com/yulong.wang.56</li>
+						</ul>
+					</p>
+					<hr />
+				</div>
+			</section>
+{% endblock %}

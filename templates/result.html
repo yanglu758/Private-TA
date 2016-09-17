@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+{% block content %}
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>Search Results</h2>
+				<p>Choose your most preferred tutor among the preferred tutors.</p>
+			</header>
+			<p>To view the details of a specific tutor, select the button at the last column and click view.</p>
+			<form action="/detail" method="post">
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<td>S/N</td>
+							<td>Date of Post</td>
+							<td>Name </td>
+							<td>Gender</td>
+							<td>DOB</td>
+							<td>Programme</td>
+							<td>Year</td>
+							<td>Faculty</td>
+							<td>Course</td>
+							<td>Number of modules teaching</td>
+							<td>Details</td>
+						</tr>
+					</thead>
+					<tbody>
+						{% for tutor in tutors %}
+						<tr>
+							<td>{{ tutors.index(tutor) + 1 }}</td>
+							<td>{{ tutor.date }}</td>
+							<td>{{ tutor.name }} </td>
+							<td>{{ tutor.gender }}</td>
+							<td>{{ tutor.dob }}</td>
+							<td>{{ tutor.programme }}</td>
+							<td>{{ tutor.year }}</td>
+							<td>{{ tutor.faculty }}</td>
+							<td>{{ tutor.course }}</td>
+							<td>{{ tutor.num +1 }}</td>
+							<td>
+								<input type="radio" name="tutor_id" id="{{ tutor.userid }}" value="{{ tutor.userid }}"/>
+								<label for="{{ tutor.userid }}">view</label>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<ul class="actions">
+				<li><input type="submit" value="view"></li>
+				<li><input type="reset" value="reset"></li>
+			</ul>
+			</form>
+		</div>
+	</section>
+					
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>About Us</h2>
+				<p>Information about our site.</p>
+				</header>
+				<h3>The Team</h3>
+				<p>We are a team of year one computing students from School of Computing (SoC), National University of Singapore. For more information about us, please go to "Contact Us" page.</p>
+				<h3>The Project</h3>
+				<p>We are emarking on a summber project Orbital offered by SoC, NUS. For more information about our school, faculty and our project, please visit the relevant website under "collaboration" sector.</p>
+		</div>
+	</section>
+
+{% endblock %}

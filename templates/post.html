@@ -1,0 +1,198 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>Post</h2>
+				<p>Make your new tuition post.</p>
+			</header>
+			<p>Welcome {{ userid }}, please make a register as a new tutor.</p>
+			<h4>Pointers to take note</h4>
+			<ul>
+				<li>Please fill the forms below with your correct particulars. Invalid post will be taken down immediately without prior notice. </li>
+				<li>Please use browsers that completely support HTML5 formats. Some browsers including Safari, Internet Explorer and Firefox do not support the display of some input formats like date. We recommend that you fill the form here with Google Chrome or Opera. </li>
+				<li>You are required to have a minimum grade of A- for the module you want to teach. </li>
+				<li>You are required to teach at least one module as your primary teaching module. If you want to teach more than one module, you are to declare the number of additional modules below.</li>
+			</ul>
+			<form action="/post" method="post">
+			<div class="row uniform 50%">
+				<div class="12u$">
+					<h3>Personal Particulars</h3>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Name</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="text" name="tutor_name" required="required" placeholder="Name"/>
+				</div>
+				<div class="4u 12u$(small)">
+					<p>Gender</p>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="Male" name="gender" value="Male"><label for='Male'>Male</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="Female" name="gender" value="Male"><label for='Female'>Female</label>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Date of Birth [YYYY-MM-DD]</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="text" name="tutor_dob" required="required" placeholder="DOB"/>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Current Programme</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<select name="current_programme" size="1" required="required" id="current_programme">
+						<option value="">- Programme -</option>
+						<option>Undergraduate</option>
+						<option>Graduate</option>
+						<option>PhD</option>
+						<option>Others</option>
+					</select>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Current Year</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<select name="year" size="1" required="required">
+						<option value="">- Year -</option>
+						<option>Year 1</option>
+						<option>Year 2</option>
+						<option>Year 3</option>
+						<option>Year 4</option>
+						<option>Year 5 and above</option>
+					</select>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Faculty</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<select name="tutor_faculty" size="1" required="required">
+						<option value="">- Faculty -</option>
+						<option>Faculty of Dentistry</option>
+						<option>School of Medicine</option>
+						<option>Faculty of Science</option>
+						<option>School of Music</option>
+						<option>Faculty of Engineering</option>
+						<option>School of Design and Environment</option>
+						<option>Faculty of Arts and Social Sciences</option>
+						<option>School of Computing</option>
+						<option>School of Business</option>
+						<option>Faculty of Law</option>
+						<option>Others</option>
+					</select>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Course</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<select name="tutor_course" size="1" required="required">
+						<option value="">- Course -</option>
+						<option>Law</option>
+						<option>Medicine</option>
+						<option>Nursing</option>
+						<option>Dentistry</option>
+						<option>Architecture</option>
+						<option>Industrial Design</option>
+						<option>Project and Facilities Management</option>
+						<option>Real Estate</option>
+						<option>Common Engineering</option>
+						<option>Biomedical Engineering</option>
+						<option>Chemical Engineering</option>
+						<option>Civil Engineering</option>
+						<option>Electrical Engineering</option>
+						<option>Environmental Engineering</option>
+						<option>Engineering Science</option>
+						<option>Industrial and Systems Engineering</option>
+						<option>Material Science and Engineering</option>
+						<option>Mechanical Engineering</option>
+						<option>Mechanical Engineering (Aeronautical)</option>
+						<option>Business Analytics</option>
+						<option>Computer Science</option>
+						<option>Information Systems</option>
+						<option>Computer Engineering</option>
+						<option>Pharmacy</option>
+						<option>Science</option>
+						<option>Business Adminstration</option>
+						<option>Business Adminstration(Accountancy)</option>
+						<option>Arts and Social Sciences</option>
+						<option>Environmental Studies</option>
+						<option>Others</option>
+					</select>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Contact Number</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="text" name="cotact_number" required="required" placeholder="Contact Number"/>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Preferred Location</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="text" name="location" required="required" placeholder="Preferred Location"/>
+				</div>
+				<div class="12u$">
+					<h3>Primary Module</h3>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Module Code</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="text" name="modules" required="required" placeholder="Module Code"/>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Price</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="number" name="price" required="required" placeholder="Price"/>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Grade</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<select name="grade" size='1' required="required" >
+						<option value="">- Grade -</option>
+						<option>A+</option>
+						<option>A</option>
+						<option>A-</option>
+					</select>
+				</div>
+				<div class="12u$">
+					<h3>Declare Additional Modules</h3>
+				</div>
+				<div class="6u 12u$(small)">
+					<p>Number of Additional Modules</p>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="number" name="num_modules" required="required">
+				</div>
+				<ul class="actions">
+					<li><input type="submit" value="submit"></li>
+					<li><input type="reset" value="reset"></li>
+				</ul>
+			</div>
+		</form>
+		</div>
+	</section>
+	
+
+{% endblock %}

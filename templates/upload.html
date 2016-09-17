@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>Upload</h2>
+				<p>Please upload some files for us to verify you.</p>
+			</header>
+			<h3>Additional Modules</h3>
+			<form action="{{ upload_url }}" method="post" enctype="multipart/form-data">
+				<div class="row uniform 50%">
+					<div class="6u 12u$(xsmall)">
+						Profile Photo
+					</div>
+					<div class="6u 12u$(xsmall)">
+						<input type="file" name="photo" placeholder="Photo" required="required" />
+					</div>
+					<div class="6u 12u$(xsmall)">
+						Transcript
+					</div>
+					<div class="6u 12u$(xsmall)">
+						<input type="file" name="transcript" placeholder="Transcript" required="required" />
+					<ul class="actions">
+						<li><input type="submit" value="submit"></li>
+						<li><input type="reset" value="reset"></li>
+						<li><a href="/edit.html"class="button">back</a></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body>
+	<header id="header">
+		<h1><a href="/">Private TA</a></h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="about_us.html">About Us</a></li>
+				<li><a href="{{ post_url }}">Post</a></li>
+				<li><a href="browse.html">Browse</a></li>
+				<li><a href="search.html">Search</a></li>
+				<li><a href="contact_us.html">Contact</a></li>
+				<li><a href="{{ url|safe }}">{{url_linktext}}</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="main" class="wrapper">
+		<div class="container">
+			<header class="major">
+				<h2>{{ tutor.name }}</h2>
+				<p>All about {{ tutor.name }}.</p>
+			</header>
+			
+			<div class="table-wrapper">
+				<table>
+					<tr>
+						<td colspan='2'><h3>Tutor Information</h3></td>
+					</tr>
+					<tr>
+						<td>Name </td>
+						<td>{{ tutor.name }} </td>
+					</tr>
+					<tr>
+						<td>Gender</td>
+						<td>{{ tutor.gender }}</td>
+					</tr>
+					<tr>
+						<td>DOB</td>
+						<td>{{ tutor.dob }}</td>
+					</tr>
+					<tr>
+						<td>Programme</td>
+						<td>{{ tutor.programme }}</td>
+					</tr>
+					<tr>
+						<td>Year</td>
+						<td>{{ tutor.year }} </td>
+					</tr>
+					<tr>
+						<td>Faculty</td>
+						<td>{{ tutor.faculty }}</td>
+					</tr>
+					<tr>
+						<td>Course</td>
+						<td>{{ tutor.course }}</td>
+					</tr>
+					<tr>
+						<td>Contact</td>
+						<td>{{ tutor.contact }} </td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>{{ tutor.email }} </td>
+					</tr>
+					<tr>
+						<td>Preferred Location</td>
+						<td>{{ tutor.location }}</td>
+					</tr>
+					<tr>
+						<td colspan='2'><h3>Tuition Information</h3></td>
+					</tr>
+					{% for count in range(len) %}
+					<tr>
+						<td>Module</td>
+						<td>{{ tutor.modules[count] }}</td>
+					</tr>
+					<tr>
+						<td>Grade</td>
+						<td>{{ tutor.grades[count] }}</td>
+					<tr>
+						<td>Price</td>
+						<td>{{ tutor.prices[count] }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			
+			<h3>Preferred Location in Map</h3>
+			<div id="map-canvas">
+				<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{tutor.location}}%20Singapore&key=AIzaSyADLr9b-jbvUn4Utt1uoAleQL3PQlAcVmY" allowfullscreen></iframe>
+			</div>
+		</div>
+	</section>
+	
+{% endblock %}
